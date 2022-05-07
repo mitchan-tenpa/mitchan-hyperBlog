@@ -9,7 +9,7 @@ function Header() {
     <header className="border-b border-gray-300 py-8">
       <Link href="/">
         <a>
-          <h1 className="text-5xl font-bold">みっつんのブログん</h1>
+          <h1 className="text-5xl font-bold">みつんのブログん</h1>
         </a>
       </Link>
     </header>
