@@ -1,21 +1,29 @@
 import "src/styles/globals.css";
 import type { AppProps } from "next/app";
-import Link from "next/link";
+import { createContext, useContext, useState } from "react";
+import Header from "src/components/Header";
+
+export const ThemeContext = createContext("light");
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const [theme, setTheme] = useState("light");
+
   return (
-    <div className="mx-auto max-w-prose">
-      <header className="border-b border-gray-300 py-8">
-        <Link href="/">
-          <a>
-            <h1 className="text-5xl font-bold">みっつんのブログん</h1>
-          </a>
-        </Link>
-      </header>
-      <main className="mt-8">
-        <Component {...pageProps} />
-      </main>
-    </div>
+    <ThemeContext.Provider value={theme}>
+      <div className="mx-auto max-w-prose">
+        <Header />
+        <main className="mt-8">
+          <button
+            onClick={() => {
+              setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+            }}
+          >
+            テーマ切り替え
+          </button>
+          <Component {...pageProps} />
+        </main>
+      </div>
+    </ThemeContext.Provider>
   );
 }
 
