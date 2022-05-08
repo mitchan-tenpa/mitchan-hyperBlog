@@ -1,23 +1,41 @@
-import React from "react";
+import { NextPage } from "next";
+import React, { Dispatch, SetStateAction } from "react";
+import { Todo } from "src/types";
 
-const TODOS = [
-  { id: 1, text: "foo", isDone: false },
-  { id: 2, text: "bar", isDone: true },
-];
-function Todo() {
+type Props = {
+  todos: Todo[];
+  setTodos: Dispatch<SetStateAction<Todo[]>>;
+};
+
+const Todo: NextPage<Props> = ({ todos, setTodos }) => {
+  const toggleIsDone = (id: Todo["id"]) => {
+    setTodos((prevTodos) => {
+      return prevTodos.map((todo) => {
+        if (todo.id === id) {
+          return { ...todo, isDone: !todo.isDone };
+        }
+        return todo;
+      });
+    });
+  };
+
   return (
     <div>
       <h3 className="bold text-2xl">TODO一覧</h3>
-      {TODOS.map((todo) => (
+      {todos.map((todo) => (
         <div key={todo.id}>
           <label>
-            <input type="checkbox" checked={todo.isDone} />
+            <input
+              type="checkbox"
+              checked={todo.isDone}
+              onChange={() => toggleIsDone(todo.id)}
+            />
             {todo.text}
           </label>
         </div>
       ))}
     </div>
   );
-}
+};
 
 export default Todo;
