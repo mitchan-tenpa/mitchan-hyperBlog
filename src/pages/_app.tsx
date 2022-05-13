@@ -1,7 +1,6 @@
 import "src/styles/globals.css";
 import type { AppProps } from "next/app";
-import { createContext, useContext, useState } from "react";
-import Header from "src/components/Header";
+import { createContext, useState } from "react";
 import { Todo } from "src/types";
 import Layout from "src/components/Layout";
 

@@ -14,7 +14,7 @@ const Header: FC<Props> = ({ todoCount }) => {
     <header className="border-b border-gray-300 py-8">
       <h1 className="text-5xl font-bold">
         <Link href="/">
-          <a>MTZのブログ</a>
+          <a>MTZのスーパーブログ</a>
         </Link>
       </h1>
       <div className="flex">
