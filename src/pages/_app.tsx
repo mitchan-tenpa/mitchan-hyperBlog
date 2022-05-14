@@ -1,34 +1,35 @@
 import "src/styles/globals.css";
 import type { AppProps } from "next/app";
-import { createContext, useState } from "react";
+import { createContext, Dispatch, SetStateAction, useState } from "react";
 import { Todo } from "src/types";
 import Layout from "src/components/Layout";
 
-export const ThemeContext = createContext("light");
 const TODOS: Todo[] = [
   { id: 1, text: "foo", isDone: false },
   { id: 2, text: "bar", isDone: true },
 ];
 
+export const TodoContext = createContext<{
+  todos: Todo[];
+  setTodos: Dispatch<SetStateAction<Todo[]>>;
+}>({
+  todos: TODOS,
+  setTodos: () => {
+    throw Error("No default value!");
+  },
+});
+
 function MyApp({ Component, pageProps }: AppProps) {
   const [todos, setTodos] = useState<Todo[]>(TODOS);
-  const [theme, setTheme] = useState("light");
 
   return (
-    <ThemeContext.Provider value={theme}>
+    <TodoContext.Provider value={{ todos, setTodos }}>
       <div className="mx-auto max-w-prose">
-        <Layout todoCount={todos.length}>
-          <button
-            onClick={() => {
-              setTheme((prev) => (prev === "dark" ? "light" : "dark"));
-            }}
-          >
-            テーマ切り替え
-          </button>
+        <Layout>
           <Component {...pageProps} todos={todos} setTodos={setTodos} />
         </Layout>
       </div>
-    </ThemeContext.Provider>
+    </TodoContext.Provider>
   );
 }
 

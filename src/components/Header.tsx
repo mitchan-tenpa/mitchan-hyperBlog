@@ -1,15 +1,12 @@
 import Link from "next/link";
-import React, { FC, useContext } from "react";
+import React, { FC } from "react";
 import TodoCounter from "src/components/TodoCounter";
-import { ThemeContext } from "src/pages/_app";
 
 type Props = {
   todoCount: number;
 };
 
-const Header: FC<Props> = ({ todoCount }) => {
-  const theme = useContext(ThemeContext);
-  console.log(theme);
+const Header: FC = () => {
   return (
     <header className="border-b border-gray-300 py-8">
       <h1 className="text-5xl font-bold">
@@ -25,7 +22,7 @@ const Header: FC<Props> = ({ todoCount }) => {
           <a>TODO追加</a>
         </Link>
       </div>
-      <TodoCounter todoCount={todoCount} />
+      <TodoCounter />
     </header>
   );
 };
