@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <TodoContext.Provider value={{ todos, setTodos }}>
-      <div className="mx-auto max-w-prose">
+      <div className="mx-auto max-w-screen-xl">
         <Layout>
           <Component {...pageProps} todos={todos} setTodos={setTodos} />
         </Layout>
