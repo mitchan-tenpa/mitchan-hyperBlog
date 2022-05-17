@@ -43,7 +43,7 @@ const Home: NextPage<Props> = (props) => {
         <button
           type="reset"
           onClick={handleClick}
-          className="transform rounded-xl bg-red-400 px-2 text-white transition duration-300 ease-out hover:scale-150 hover:bg-opacity-50 hover:shadow-inner"
+          className="transform rounded-xl border border-red-400 px-2 text-red-400 transition duration-300 ease-out hover:bg-red-400 hover:bg-opacity-50 hover:text-white"
         >
           リセット
         </button>
