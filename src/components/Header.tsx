@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React, { FC } from "react";
-import TodoCounter from "src/components/TodoCounter";
 
 type Props = {
   todoCount: number;
