@@ -20,7 +20,7 @@ const PracticePage: NextPage = () => {
 
   //2
   const [texts, setTexts] = useState("");
-  const [array, setArray] = useState([]);
+  const [array, setArray] = useState<string[]>([]);
   const submitText: ComponentProps<"form">["onSubmit"] = (e: any) => {
     e.preventDefault();
     console.log(texts); //このログはformの時に走る
@@ -37,7 +37,7 @@ const PracticePage: NextPage = () => {
   );
   //React講座14
   const handleAdd: ComponentProps<"button">["onClick"] = useCallback(() => {
-    setArray((prevArray) => {
+    setArray((prevArray: string[]) => {
       if (prevArray.some((item) => item === texts)) {
         alert("同じ要素が既に存在します。");
         return prevArray;
