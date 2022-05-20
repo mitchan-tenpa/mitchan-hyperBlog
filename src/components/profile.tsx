@@ -24,6 +24,9 @@ function Profile() {
         <Link href="/add">
           <a>TODO追加</a>
         </Link>
+        <Link href="/practicePage">
+          <a>Practice</a>
+        </Link>
       </div>
     </div>
   );

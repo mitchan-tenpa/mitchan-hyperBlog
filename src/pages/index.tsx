@@ -3,7 +3,6 @@ import type { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
 import { ComponentProps, useState } from "react";
 import { client } from "src/libs/client";
-import PracticePage from "src/pages/practicePage";
 
 export type Blog = {
   title: string;
@@ -36,8 +35,6 @@ const Home: NextPage<Props> = (props) => {
 
   return (
     <div>
-      <Link href="/practicePage">Practice</Link>
-
       <form className="my-5 mx-auto flex w-96 gap-x-2" onSubmit={handleSubmit}>
         <input type="text" name="query" className="border border-black px-2" />
         <button className="rounded-xl border border-slate-500 px-2 text-slate-500 transition duration-500 ease-out hover:bg-slate-500 hover:text-white">
