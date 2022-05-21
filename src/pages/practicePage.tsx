@@ -1,5 +1,6 @@
 import { NextPage } from "next";
 import React, { ComponentProps, useCallback, useState } from "react";
+import Training from "src/components/training";
 
 type Texts = {
   id: number;
@@ -72,6 +73,8 @@ const PracticePage: NextPage = () => {
           return <div key={item}>{item}</div>;
         })}
       </ul>
+      {/* 3 */}
+      <Training />
     </div>
   );
 };
