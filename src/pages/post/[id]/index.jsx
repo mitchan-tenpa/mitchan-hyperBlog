@@ -23,7 +23,7 @@ const PostId = () => {
     // "https://jsonplaceholder.typicode.com/posts",
     fetcher
   );
-  console.log({ data, error });
+  // console.log({ data, error });
   // console.log(router);
   return (
     <div>

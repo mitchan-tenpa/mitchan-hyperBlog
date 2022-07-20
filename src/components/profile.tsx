@@ -8,7 +8,7 @@ function Profile() {
   return (
     <div className="mt-4 w-1/4">
       <div className=" m-4 h-96 w-80 rounded-xl shadow-2xl">
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center p-4">
           <Image src={avatar} alt="profile" width={100} height={100} />
           <p>MTZ</p>
         </div>
