@@ -53,17 +53,25 @@ const Home: NextPage<Props> = (props) => {
       </p>
 
       <div className="mx-auto w-4/5">
-        {/* <ul className="mt-4 grid grid-cols-2 gap-7"> */}
+        {/* グリッドver. <ul className="mt-4 grid grid-cols-2 gap-7"> */}
         <ul className="mt-4 inline list-none">
           {contents.map((content) => {
             return (
               <li
                 key={content.id}
-                className="rounded-xl p-4 text-center shadow-2xl transition duration-300 ease-out hover:scale-110"
+                className="rounded-xl p-4 shadow-2xl transition duration-300 ease-out hover:scale-110"
               >
                 <Link href={`/blog/${content.id}`}>
-                  <a className=" text-blue-800 hover:text-blue-400 hover:underline">
-                    {content.title}
+                  <a className=" text-blue-800">
+                    <div className="mb-5 flex truncate text-sm">
+                      <div className="mr-5 h-5 w-5">
+                        <p>ロゴ</p>
+                      </div>
+                      <p>MTZ</p>
+                    </div>
+                    <h2 className="truncate  text-lg font-bold text-blue-900 hover:underline">
+                      {content.title}
+                    </h2>
                   </a>
                 </Link>
               </li>

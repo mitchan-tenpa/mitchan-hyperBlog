@@ -7,7 +7,7 @@ type Props = {
 
 const Header: FC = () => {
   return (
-    <header className="border-b border-gray-400 py-8">
+    <header className="border-b border-gray-300 py-8">
       <div className="h-5% flex flex-col p-3 ">
         <h1 className="m-auto text-5xl font-bold">
           <Link href="/">
